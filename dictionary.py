@@ -52,7 +52,7 @@ class window(QtWidgets.QWidget):
         if "synonyms" in self.text[0]["meanings"][self.currentpage-1]["definitions"][0]:
                 counter=1
                 self.ui.synonyms.setText(f"""Synonyms:\n1. {self.text[0]["meanings"][self.currentpage-1]["definitions"][0]["synonyms"][0].capitalize()}\n""")
-                for i in self.text[0]["meanings"][self.currentpage-1]["definitions"][0]["synonyms"]:
+                for i in self.text[0]["meanings"][self.currentpage-1]["definitions"][0]["synonyms"][1:]:
                     counter+=1
                     self.ui.synonyms.setText(f"{self.ui.synonyms.toPlainText()}{counter}. {i.capitalize()}\n")
         else:
